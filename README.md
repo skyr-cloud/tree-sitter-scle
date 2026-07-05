@@ -1,6 +1,12 @@
 # tree-sitter-scle
 
-Tree-sitter grammar for **SCLE** (SCL Expression), a value format based on the SCL language. An SCLE file (`.scle`) contains an optional sequence of imports, followed by a single type expression, followed by a single body expression. This grammar inherits all rules from [tree-sitter-scl](../tree-sitter-scl/) and overrides only the root `source_file` rule.
+Tree-sitter grammar for **SCLE** (SCL Expression), a value format based on the SCL language. An SCLE file (`.scle`) contains an optional sequence of imports, followed by a single type expression, followed by a single body expression. This grammar inherits all rules from [tree-sitter-scl](https://github.com/skyr-cloud/tree-sitter-scl) and overrides only the root `source_file` rule.
+
+The committed `src/parser.c` is what editors and bindings consume, and it works
+standalone. Regenerating it (`tree-sitter generate`) requires the parent
+`tree-sitter-scl` grammar as a sibling checkout, which is how the grammars are
+laid out in the Skyr monorepo where they are developed — regeneration happens
+there, not in this mirror.
 
 ## Read-only mirror
 
