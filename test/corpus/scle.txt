@@ -151,3 +151,35 @@ Int?
 (source_file
   type: (optional_type
     (type_identifier)))
+
+================================================================================
+SCLE exported atom value
+================================================================================
+
+.prod
+
+--------------------------------------------------------------------------------
+
+(source_file
+  body: (atom
+    label: (identifier)))
+
+================================================================================
+SCLE enum type with parenthesized atom body
+================================================================================
+
+enum { .dev, .prod }
+
+(.prod)
+
+--------------------------------------------------------------------------------
+
+(source_file
+  type: (enum_type
+    (enum_variant
+      label: (identifier))
+    (enum_variant
+      label: (identifier)))
+  body: (parenthesized_expression
+    (atom
+      label: (identifier))))
