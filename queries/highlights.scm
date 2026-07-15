@@ -76,7 +76,7 @@
 
 ; Imports
 (import_path
-  (identifier) @module)
+  (import_fragment) @module)
 
 ; Punctuation
 "(" @punctuation.bracket

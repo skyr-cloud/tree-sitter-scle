@@ -13,6 +13,131 @@
           }
         ]
       }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "atom_payload",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "atom_payload",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "atom",
+          "named": true
+        },
+        {
+          "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "call_expression",
+          "named": true
+        },
+        {
+          "type": "dict",
+          "named": true
+        },
+        {
+          "type": "exception_expression",
+          "named": true
+        },
+        {
+          "type": "extern_expression",
+          "named": true
+        },
+        {
+          "type": "float",
+          "named": true
+        },
+        {
+          "type": "fn_expression",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "if_expression",
+          "named": true
+        },
+        {
+          "type": "indexed_access",
+          "named": true
+        },
+        {
+          "type": "integer",
+          "named": true
+        },
+        {
+          "type": "let_expression",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "nil",
+          "named": true
+        },
+        {
+          "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "path_expression",
+          "named": true
+        },
+        {
+          "type": "property_access",
+          "named": true
+        },
+        {
+          "type": "raise_expression",
+          "named": true
+        },
+        {
+          "type": "record",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "switch_expression",
+          "named": true
+        },
+        {
+          "type": "try_expression",
+          "named": true
+        },
+        {
+          "type": "type_cast",
+          "named": true
+        },
+        {
+          "type": "unary_expression",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -109,6 +234,10 @@
           },
           {
             "type": "string",
+            "named": true
+          },
+          {
+            "type": "switch_expression",
             "named": true
           },
           {
@@ -272,6 +401,10 @@
             "named": true
           },
           {
+            "type": "switch_expression",
+            "named": true
+          },
+          {
             "type": "try_expression",
             "named": true
           },
@@ -281,6 +414,22 @@
           },
           {
             "type": "unary_expression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "binding_pattern",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
             "named": true
           }
         ]
@@ -386,6 +535,10 @@
           },
           {
             "type": "string",
+            "named": true
+          },
+          {
+            "type": "switch_expression",
             "named": true
           },
           {
@@ -496,6 +649,10 @@
           "named": true
         },
         {
+          "type": "switch_expression",
+          "named": true
+        },
+        {
           "type": "try_expression",
           "named": true
         },
@@ -512,6 +669,144 @@
           "named": true
         }
       ]
+    }
+  },
+  {
+    "type": "case_clause",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "atom",
+            "named": true
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "dict",
+            "named": true
+          },
+          {
+            "type": "exception_expression",
+            "named": true
+          },
+          {
+            "type": "extern_expression",
+            "named": true
+          },
+          {
+            "type": "float",
+            "named": true
+          },
+          {
+            "type": "fn_expression",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "indexed_access",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "let_expression",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "nil",
+            "named": true
+          },
+          {
+            "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "path_expression",
+            "named": true
+          },
+          {
+            "type": "property_access",
+            "named": true
+          },
+          {
+            "type": "raise_expression",
+            "named": true
+          },
+          {
+            "type": "record",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "switch_expression",
+            "named": true
+          },
+          {
+            "type": "try_expression",
+            "named": true
+          },
+          {
+            "type": "type_cast",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      },
+      "pattern": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "binding_pattern",
+            "named": true
+          },
+          {
+            "type": "nil_pattern",
+            "named": true
+          },
+          {
+            "type": "variant_pattern",
+            "named": true
+          },
+          {
+            "type": "wildcard_pattern",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -618,6 +913,10 @@
           },
           {
             "type": "string",
+            "named": true
+          },
+          {
+            "type": "switch_expression",
             "named": true
           },
           {
@@ -762,6 +1061,10 @@
             "named": true
           },
           {
+            "type": "switch_expression",
+            "named": true
+          },
+          {
             "type": "try_expression",
             "named": true
           },
@@ -865,6 +1168,10 @@
           },
           {
             "type": "string",
+            "named": true
+          },
+          {
+            "type": "switch_expression",
             "named": true
           },
           {
@@ -994,6 +1301,59 @@
           }
         ]
       }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "enum_variant_payload",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enum_variant_payload",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "dict_type",
+          "named": true
+        },
+        {
+          "type": "enum_type",
+          "named": true
+        },
+        {
+          "type": "fn_type",
+          "named": true
+        },
+        {
+          "type": "list_type",
+          "named": true
+        },
+        {
+          "type": "optional_type",
+          "named": true
+        },
+        {
+          "type": "record_type",
+          "named": true
+        },
+        {
+          "type": "type_identifier",
+          "named": true
+        },
+        {
+          "type": "type_property_access",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -1187,6 +1547,10 @@
           },
           {
             "type": "string",
+            "named": true
+          },
+          {
+            "type": "switch_expression",
             "named": true
           },
           {
@@ -1471,6 +1835,10 @@
             "named": true
           },
           {
+            "type": "switch_expression",
+            "named": true
+          },
+          {
             "type": "try_expression",
             "named": true
           },
@@ -1577,6 +1945,10 @@
             "named": true
           },
           {
+            "type": "switch_expression",
+            "named": true
+          },
+          {
             "type": "try_expression",
             "named": true
           },
@@ -1680,6 +2052,10 @@
           },
           {
             "type": "string",
+            "named": true
+          },
+          {
+            "type": "switch_expression",
             "named": true
           },
           {
@@ -1836,6 +2212,10 @@
             "named": true
           },
           {
+            "type": "switch_expression",
+            "named": true
+          },
+          {
             "type": "try_expression",
             "named": true
           },
@@ -1939,6 +2319,10 @@
           },
           {
             "type": "string",
+            "named": true
+          },
+          {
+            "type": "switch_expression",
             "named": true
           },
           {
@@ -2051,6 +2435,10 @@
         },
         {
           "type": "string",
+          "named": true
+        },
+        {
+          "type": "switch_expression",
           "named": true
         },
         {
@@ -2213,6 +2601,10 @@
             "named": true
           },
           {
+            "type": "switch_expression",
+            "named": true
+          },
+          {
             "type": "try_expression",
             "named": true
           },
@@ -2322,6 +2714,10 @@
           },
           {
             "type": "string",
+            "named": true
+          },
+          {
+            "type": "switch_expression",
             "named": true
           },
           {
@@ -2455,6 +2851,10 @@
           "named": true
         },
         {
+          "type": "switch_expression",
+          "named": true
+        },
+        {
           "type": "try_expression",
           "named": true
         },
@@ -2574,6 +2974,10 @@
             "named": true
           },
           {
+            "type": "switch_expression",
+            "named": true
+          },
+          {
             "type": "try_expression",
             "named": true
           },
@@ -2677,6 +3081,10 @@
           },
           {
             "type": "string",
+            "named": true
+          },
+          {
+            "type": "switch_expression",
             "named": true
           },
           {
@@ -2810,6 +3218,10 @@
             "named": true
           },
           {
+            "type": "switch_expression",
+            "named": true
+          },
+          {
             "type": "try_expression",
             "named": true
           },
@@ -2916,6 +3328,10 @@
             "named": true
           },
           {
+            "type": "switch_expression",
+            "named": true
+          },
+          {
             "type": "try_expression",
             "named": true
           },
@@ -2973,6 +3389,16 @@
         }
       ]
     }
+  },
+  {
+    "type": "nil",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "nil_pattern",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "optional_type",
@@ -3110,6 +3536,10 @@
           "named": true
         },
         {
+          "type": "switch_expression",
+          "named": true
+        },
+        {
           "type": "try_expression",
           "named": true
         },
@@ -3128,6 +3558,33 @@
     "type": "path_expression",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "pattern_payload",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "binding_pattern",
+          "named": true
+        },
+        {
+          "type": "nil_pattern",
+          "named": true
+        },
+        {
+          "type": "variant_pattern",
+          "named": true
+        },
+        {
+          "type": "wildcard_pattern",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "property_access",
@@ -3223,6 +3680,10 @@
           },
           {
             "type": "string",
+            "named": true
+          },
+          {
+            "type": "switch_expression",
             "named": true
           },
           {
@@ -3345,6 +3806,10 @@
           },
           {
             "type": "string",
+            "named": true
+          },
+          {
+            "type": "switch_expression",
             "named": true
           },
           {
@@ -3482,6 +3947,10 @@
           },
           {
             "type": "string",
+            "named": true
+          },
+          {
+            "type": "switch_expression",
             "named": true
           },
           {
@@ -3667,6 +4136,10 @@
             "named": true
           },
           {
+            "type": "switch_expression",
+            "named": true
+          },
+          {
             "type": "try_expression",
             "named": true
           },
@@ -3744,6 +4217,132 @@
         },
         {
           "type": "string_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "switch_expression",
+    "named": true,
+    "fields": {
+      "subject": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "atom",
+            "named": true
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "dict",
+            "named": true
+          },
+          {
+            "type": "exception_expression",
+            "named": true
+          },
+          {
+            "type": "extern_expression",
+            "named": true
+          },
+          {
+            "type": "float",
+            "named": true
+          },
+          {
+            "type": "fn_expression",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "indexed_access",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "let_expression",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "nil",
+            "named": true
+          },
+          {
+            "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "path_expression",
+            "named": true
+          },
+          {
+            "type": "property_access",
+            "named": true
+          },
+          {
+            "type": "raise_expression",
+            "named": true
+          },
+          {
+            "type": "record",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "switch_expression",
+            "named": true
+          },
+          {
+            "type": "try_expression",
+            "named": true
+          },
+          {
+            "type": "type_cast",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "case_clause",
           "named": true
         }
       ]
@@ -3843,6 +4442,10 @@
           },
           {
             "type": "string",
+            "named": true
+          },
+          {
+            "type": "switch_expression",
             "named": true
           },
           {
@@ -4008,6 +4611,10 @@
           },
           {
             "type": "string",
+            "named": true
+          },
+          {
+            "type": "switch_expression",
             "named": true
           },
           {
@@ -4269,6 +4876,10 @@
             "named": true
           },
           {
+            "type": "switch_expression",
+            "named": true
+          },
+          {
             "type": "try_expression",
             "named": true
           },
@@ -4296,6 +4907,32 @@
           }
         ]
       }
+    }
+  },
+  {
+    "type": "variant_pattern",
+    "named": true,
+    "fields": {
+      "label": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "pattern_payload",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -4403,6 +5040,10 @@
     "named": false
   },
   {
+    "type": "case",
+    "named": false
+  },
+  {
     "type": "catch",
     "named": false
   },
@@ -4473,7 +5114,7 @@
   },
   {
     "type": "nil",
-    "named": true
+    "named": false
   },
   {
     "type": "raise",
@@ -4482,6 +5123,10 @@
   {
     "type": "string_content",
     "named": true
+  },
+  {
+    "type": "switch",
+    "named": false
   },
   {
     "type": "true",
@@ -4493,6 +5138,10 @@
   },
   {
     "type": "type_identifier",
+    "named": true
+  },
+  {
+    "type": "wildcard_pattern",
     "named": true
   },
   {

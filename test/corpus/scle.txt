@@ -183,3 +183,27 @@ enum { .dev, .prod }
   body: (parenthesized_expression
     (atom
       label: (identifier))))
+
+================================================================================
+SCLE tagged enum type with a tagged atom body
+================================================================================
+
+enum { .ok(Int), .err }
+
+(.ok(200))
+
+--------------------------------------------------------------------------------
+
+(source_file
+  type: (enum_type
+    (enum_variant
+      label: (identifier)
+      (enum_variant_payload
+        (type_identifier)))
+    (enum_variant
+      label: (identifier)))
+  body: (parenthesized_expression
+    (atom
+      label: (identifier)
+      (atom_payload
+        (integer)))))
