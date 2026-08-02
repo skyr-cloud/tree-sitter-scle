@@ -5,7 +5,7 @@
     "description": "Tree-sitter grammar for SCLE (SCL Expression)",
     "authors": [],
     "links": {
-      "repository": ""
+      "repository": "https://github.com/skyr-cloud/tree-sitter-scle"
     }
   },
   "grammars": [
