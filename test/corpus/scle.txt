@@ -207,3 +207,20 @@ enum { .ok(Int), .err }
       label: (identifier)
       (atom_payload
         (integer)))))
+
+================================================================================
+SCLE body is a discard chain
+================================================================================
+
+Int
+
+SideEffect(); 42
+
+--------------------------------------------------------------------------------
+
+(source_file
+  type: (type_identifier)
+  body: (discard_expression
+    left: (call_expression
+      function: (identifier))
+    right: (integer)))
