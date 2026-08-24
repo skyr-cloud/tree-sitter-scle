@@ -1725,6 +1725,10 @@
             "named": true
           },
           {
+            "type": "type_application",
+            "named": true
+          },
+          {
             "type": "type_identifier",
             "named": true
           },
@@ -1760,6 +1764,10 @@
           },
           {
             "type": "record_type",
+            "named": true
+          },
+          {
+            "type": "type_application",
             "named": true
           },
           {
@@ -2086,6 +2094,10 @@
           "named": true
         },
         {
+          "type": "type_application",
+          "named": true
+        },
+        {
           "type": "type_identifier",
           "named": true
         },
@@ -2126,6 +2138,10 @@
         },
         {
           "type": "record_type",
+          "named": true
+        },
+        {
+          "type": "type_application",
           "named": true
         },
         {
@@ -2179,6 +2195,10 @@
           },
           {
             "type": "record_type",
+            "named": true
+          },
+          {
+            "type": "type_application",
             "named": true
           },
           {
@@ -2374,6 +2394,10 @@
             "named": true
           },
           {
+            "type": "type_application",
+            "named": true
+          },
+          {
             "type": "type_identifier",
             "named": true
           },
@@ -2433,6 +2457,10 @@
             "named": true
           },
           {
+            "type": "type_application",
+            "named": true
+          },
+          {
             "type": "type_identifier",
             "named": true
           },
@@ -2469,6 +2497,10 @@
         },
         {
           "type": "record_type",
+          "named": true
+        },
+        {
+          "type": "type_application",
           "named": true
         },
         {
@@ -3288,6 +3320,10 @@
           },
           {
             "type": "record_type",
+            "named": true
+          },
+          {
+            "type": "type_application",
             "named": true
           },
           {
@@ -4360,6 +4396,10 @@
           "named": true
         },
         {
+          "type": "type_application",
+          "named": true
+        },
+        {
           "type": "type_identifier",
           "named": true
         },
@@ -4377,6 +4417,11 @@
   },
   {
     "type": "nil_pattern",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "optional_chain",
     "named": true,
     "fields": {}
   },
@@ -4406,6 +4451,10 @@
         },
         {
           "type": "record_type",
+          "named": true
+        },
+        {
+          "type": "type_application",
           "named": true
         },
         {
@@ -4702,6 +4751,16 @@
           }
         ]
       }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "optional_chain",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -5035,6 +5094,10 @@
             "named": true
           },
           {
+            "type": "type_application",
+            "named": true
+          },
+          {
             "type": "type_identifier",
             "named": true
           },
@@ -5195,6 +5258,10 @@
           },
           {
             "type": "record_type",
+            "named": true
+          },
+          {
+            "type": "type_application",
             "named": true
           },
           {
@@ -5507,6 +5574,60 @@
     }
   },
   {
+    "type": "type_application",
+    "named": true,
+    "fields": {
+      "base": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "dict_type",
+            "named": true
+          },
+          {
+            "type": "enum_type",
+            "named": true
+          },
+          {
+            "type": "fn_type",
+            "named": true
+          },
+          {
+            "type": "list_type",
+            "named": true
+          },
+          {
+            "type": "record_type",
+            "named": true
+          },
+          {
+            "type": "type_application",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          },
+          {
+            "type": "type_property_access",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "type_arguments",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "type_arguments",
     "named": true,
     "fields": {},
@@ -5536,6 +5657,10 @@
         },
         {
           "type": "record_type",
+          "named": true
+        },
+        {
+          "type": "type_application",
           "named": true
         },
         {
@@ -5696,6 +5821,10 @@
             "named": true
           },
           {
+            "type": "type_application",
+            "named": true
+          },
+          {
             "type": "type_identifier",
             "named": true
           },
@@ -5737,6 +5866,10 @@
           },
           {
             "type": "record_type",
+            "named": true
+          },
+          {
+            "type": "type_application",
             "named": true
           },
           {
@@ -5802,6 +5935,10 @@
         },
         {
           "type": "record_type",
+          "named": true
+        },
+        {
+          "type": "type_application",
           "named": true
         },
         {
