@@ -321,10 +321,10 @@
         },
         {
           "type": "FIELD",
-          "name": "name",
+          "name": "pattern",
           "content": {
             "type": "SYMBOL",
-            "name": "identifier"
+            "name": "_pattern"
           }
         },
         {
@@ -2753,10 +2753,10 @@
       "members": [
         {
           "type": "FIELD",
-          "name": "name",
+          "name": "pattern",
           "content": {
             "type": "SYMBOL",
-            "name": "identifier"
+            "name": "_pattern"
           }
         },
         {
@@ -4687,7 +4687,7 @@
       "_type_expression_base"
     ],
     [
-      "fn_parameter",
+      "binding_pattern",
       "_type_expression_base"
     ],
     [

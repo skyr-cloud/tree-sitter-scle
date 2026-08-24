@@ -2,16 +2,19 @@
 (fn_expression) @local.scope
 (let_expression) @local.scope
 (list_for_item) @local.scope
+(case_clause) @local.scope
 
 ; Definitions
-(let_binding
-  name: (identifier) @local.definition)
-(fn_parameter
-  name: (identifier) @local.definition)
+;
+; A `let` binder and a function parameter are patterns, so the binding-pattern
+; rule below covers them along with the binders inside a `case` pattern —
+; whether the pattern is a bare name or destructures.
 (list_for_item
   variable: (identifier) @local.definition)
 (catch_clause
   binding: (identifier) @local.definition)
+(binding_pattern
+  name: (identifier) @local.definition)
 
 ; References
 (identifier) @local.reference

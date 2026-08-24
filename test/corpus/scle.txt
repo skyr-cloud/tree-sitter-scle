@@ -67,11 +67,13 @@ let f = fn(param: Bool)
       type: (type_identifier)))
   body: (let_expression
     (let_binding
-      name: (identifier)
+      pattern: (binding_pattern
+        name: (identifier))
       value: (fn_expression
         (fn_parameters
           (fn_parameter
-            name: (identifier)
+            pattern: (binding_pattern
+              name: (identifier))
             type: (type_identifier)))
         body: (if_expression
           condition: (identifier)
@@ -224,3 +226,34 @@ SideEffect(); 42
     left: (call_expression
       function: (identifier))
     right: (integer)))
+
+================================================================================
+SCLE body destructuring a variant pattern
+================================================================================
+
+import Std/Option
+
+Int
+
+let .some(n): Int? = read(); n
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (import_statement
+    (import_path
+      (import_fragment)
+      (import_fragment)))
+  type: (type_identifier)
+  body: (let_expression
+    (let_binding
+      pattern: (variant_pattern
+        label: (identifier)
+        (pattern_payload
+          (binding_pattern
+            name: (identifier))))
+      type: (optional_type
+        (type_identifier))
+      value: (call_expression
+        function: (identifier)))
+    body: (identifier)))
