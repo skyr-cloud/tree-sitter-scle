@@ -257,3 +257,67 @@ let .some(n): Int? = read(); n
       value: (call_expression
         function: (identifier)))
     body: (identifier)))
+
+================================================================================
+Empty SCLE file
+================================================================================
+
+--------------------------------------------------------------------------------
+
+(source_file)
+
+================================================================================
+SCLE with imports only
+================================================================================
+
+import Std/List
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (import_statement
+    (import_path
+      (import_fragment)
+      (import_fragment))))
+
+================================================================================
+SCLE body destructuring a record pattern and switching
+================================================================================
+
+//! Doc.
+Str
+
+let {name, status: .active(port)} = server;
+switch status
+	case .ready: name
+	case _: "{port}"
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (inner_doc_comment)
+  type: (type_identifier)
+  body: (let_expression
+    (let_binding
+      pattern: (record_pattern
+        (record_field_pattern
+          name: (identifier))
+        (record_field_pattern
+          name: (identifier)
+          pattern: (variant_pattern
+            label: (identifier)
+            (pattern_payload
+              (binding_pattern
+                name: (identifier))))))
+      value: (identifier))
+    body: (switch_expression
+      subject: (identifier)
+      (case_clause
+        pattern: (variant_pattern
+          label: (identifier))
+        body: (identifier))
+      (case_clause
+        pattern: (wildcard_pattern)
+        body: (string
+          (interpolation
+            (identifier)))))))

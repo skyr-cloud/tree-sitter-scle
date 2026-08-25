@@ -1,6 +1,6 @@
 # tree-sitter-scle
 
-Tree-sitter grammar for **SCLE** (SCL Expression), a value format based on the SCL language. An SCLE file (`.scle`) contains an optional sequence of imports, followed by a single type expression, followed by a single body expression. This grammar inherits all rules from [tree-sitter-scl](https://github.com/skyr-cloud/tree-sitter-scl) and overrides only the root `source_file` rule.
+Tree-sitter grammar for **SCLE** (SCL Expression), a value format based on the SCL language. An SCLE file (`.scle`) contains an optional sequence of imports, an optional type expression declaring the expected type, and a body expression — each optional at the grammar level, as in the reference parser (a missing body is a diagnostic there, not a parse failure). This grammar inherits all rules from [tree-sitter-scl](https://github.com/skyr-cloud/tree-sitter-scl) and overrides only the root `source_file` rule.
 
 The committed `src/parser.c` is what editors and bindings consume, and it works
 standalone. Regenerating it (`tree-sitter generate`) requires the parent

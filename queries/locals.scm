@@ -2,6 +2,7 @@
 (fn_expression) @local.scope
 (let_expression) @local.scope
 (list_for_item) @local.scope
+(dict_for_item) @local.scope
 (case_clause) @local.scope
 
 ; Definitions
@@ -11,9 +12,16 @@
 ; whether the pattern is a bare name or destructures.
 (list_for_item
   variable: (identifier) @local.definition)
+(dict_for_item
+  variable: (identifier) @local.definition)
 (catch_clause
   binding: (identifier) @local.definition)
 (binding_pattern
+  name: (identifier) @local.definition)
+; A record pattern's shorthand field (`{a}`) is a binder with no
+; binding-pattern node of its own; the explicit form's binder is covered above.
+(record_field_pattern
+  !pattern
   name: (identifier) @local.definition)
 
 ; References

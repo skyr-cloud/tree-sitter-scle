@@ -1,3 +1,7 @@
+; Mirrors tree-sitter-scl's highlights, minus the statement-level nodes an
+; SCLE file cannot contain (declarations, exports, annotations) — those rules
+; are pruned from this grammar, and a query naming a pruned node fails to load.
+
 ; Keywords
 "import" @keyword
 "let" @keyword
@@ -7,10 +11,14 @@
 "else" @keyword.conditional
 "for" @keyword.repeat
 "in" @keyword
+"enum" @keyword
 "exception" @keyword
 "raise" @keyword
 "try" @keyword
 "catch" @keyword
+"switch" @keyword.conditional
+"case" @keyword.conditional
+"with" @keyword
 "as" @keyword
 
 ; Literals
@@ -18,6 +26,10 @@
 (float) @number.float
 (boolean) @constant.builtin
 (nil) @constant.builtin
+
+; Atoms and enum variants (the label only; payloads highlight as their own kind)
+(atom label: (identifier) @constant)
+(enum_variant label: (identifier) @constant)
 
 ; Patterns — a `case` arm, a `let` binder and a function parameter alike
 (variant_pattern label: (identifier) @constant)
@@ -37,12 +49,19 @@
 
 ; Comments
 (comment) @comment
+(doc_comment) @comment.documentation
+(inner_doc_comment) @comment.documentation
 
 ; Operators
 (binary_expression
   operator: _ @operator)
 (unary_expression
-  "-" @operator)
+  operator: _ @operator)
+
+; The `?` that marks an optional type, and the `?.` that chains through one.
+(optional_chain) @operator
+(optional_type
+  "?" @operator)
 
 ; Functions
 (call_expression
@@ -60,6 +79,18 @@
 (fn_parameter
   type: (type_identifier) @type)
 
+; Generics — a declared type parameter is a type name like any other, and the
+; angle brackets delimiting parameters and arguments are brackets, not the
+; comparison operators they share their spelling with.
+(type_parameter
+  name: (identifier) @type)
+(type_parameters
+  "<" @punctuation.bracket
+  ">" @punctuation.bracket)
+(type_arguments
+  "<" @punctuation.bracket
+  ">" @punctuation.bracket)
+
 ; Properties
 (property_access
   property: (identifier) @property)
@@ -67,6 +98,14 @@
   name: (identifier) @property)
 (record_type_field
   name: (identifier) @property)
+; A record pattern's explicit field names a property; the shorthand field is a
+; binder wearing the field's name, so it highlights as the variable it binds.
+(record_field_pattern
+  name: (identifier) @property
+  pattern: (_))
+(record_field_pattern
+  !pattern
+  name: (identifier) @variable)
 
 ; Variables
 ;
@@ -78,6 +117,8 @@
     name: (identifier) @variable.parameter))
 (list_for_item
   variable: (identifier) @variable)
+(dict_for_item
+  variable: (identifier) @variable)
 (catch_clause
   binding: (identifier) @variable)
 (catch_clause
@@ -86,6 +127,8 @@
 ; Imports
 (import_path
   (import_fragment) @module)
+(import_statement
+  alias: (identifier) @module)
 
 ; Punctuation
 "(" @punctuation.bracket
